@@ -16,6 +16,9 @@
           crossorigin=""></script>
      <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
      <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+     <script src="https://unpkg.com/shpjs@latest/dist/shp.min.js"></script>
+     <script src="https://unpkg.com/leaflet.shpfile/leaflet.shpfile.js"></script>
+     
 
 </head>
 <body>
@@ -43,6 +46,7 @@
 
 
           <div class="latlong">
+
                <div class="input_div">
                     <label for="">Longitude</label>
                     <input type="text" id="input_x">
@@ -50,6 +54,17 @@
                <div class="input_div">
                     <label for="">Latitude</label>
                     <input type="text" id="input_y">
+               </div>
+               <div class="heatmap">
+                    <label for="">Heatmap</label>
+                    <select name="" id="Heatmap_selection">
+                         <option value="Sim">
+                              Sim
+                         </option>
+                         <option value="Nao" selected>
+                              Não
+                         </option>
+                    </select>
                </div>
           </div>
 
@@ -60,7 +75,7 @@
                </div>
           </div>
 
-          <div class="input_div visible">
+          <div class="input_div visible" id="delimitador">
                     <label for="">Delimitador</label>
                     <input type="text" id="input_delimiter">
           </div>
@@ -76,7 +91,32 @@
 
           <button id="button_save">Salvar</button>
      </div>
+
      
+     <div class="order_div">
+
+    <div class="input_div">
+        <label for="">Campo a ser ordenado</label>
+        <input type="text" id="heatmap_cord">
+    </div>
+
+    <div class="input_div">
+        <label for="">Sig médio</label>
+        <input type="number" id="mid_sig">
+    </div>
+
+
+</div>
+
+<div class="heat-legend" id="heatLegend">
+    <div class="heat-legend-title">Intensidade do Sinal</div>
+    <div class="heat-legend-gradient"></div>
+    <div class="heat-legend-labels">
+        <span>Fraco</span>
+        <span>Forte</span>
+    </div>
+</div>
+
 
 
      <script src="script/script.js"></script>
